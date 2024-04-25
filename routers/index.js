@@ -16,6 +16,8 @@ router.use(function (req, res, next){
     if (!req.session.UserId){
         const error = 'Please Login First!'
         res.redirect(`/login?error=${error}`)
+    }else {
+        next()
     }
 })
 
