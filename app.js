@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: { secure: false }
 }))
 
@@ -22,7 +22,3 @@ app.use("/", require("./routers"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-
-
-/** */
