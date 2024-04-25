@@ -1,3 +1,5 @@
+const bcrypt =  require('bcryptjs')
+
 class Controller{
 
     static home (req, res){
@@ -23,7 +25,16 @@ class Controller{
         .catch(err => res.send(err))
     }
 
-   
+   static postlogin(req, res){
+    const { username, password} = req.body
+    
+    User.findOne({where: {username}})
+    .then(user => {
+        if (user) {
+            const isValidPassword = bcrypt.compareSync(password, user.password)
+        }
+    })
+   }
 }
 
 module.exports = Controller

@@ -4,11 +4,13 @@ const router = express.Router();
 
 router.get('/', Controller.home)
 
-// router.get('/register', Controller.registerform)
+router.get('/register', Controller.registerform)
 
-// router.post('/register', Controller.postRegister)
+router.post('/register', Controller.postRegister)
 
-// router.get('/login',  Controller.loginForm)
+router.get('/login',  Controller.loginForm)
+
+// router.post('/login', Controller.postlogin)
 
 // router.get('/posts', Controller.showPosts)
 
