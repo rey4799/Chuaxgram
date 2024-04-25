@@ -10,7 +10,14 @@ router.post('/register', Controller.postRegister)
 
 router.get('/login',  Controller.loginForm)
 
-// router.post('/login', Controller.postlogin)
+router.post('/login', Controller.postlogin)
+
+router.use(function (req, res, next){
+    if (!req.session.UserId){
+        const error = 'Please Login First!'
+        res.redirect(`/login?error=${error}`)
+    }
+})
 
 // router.get('/posts', Controller.showPosts)
 

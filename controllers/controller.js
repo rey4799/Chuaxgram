@@ -1,4 +1,6 @@
 const bcrypt =  require('bcryptjs')
+const { op } = require("sequelize");
+const {User,Profile} = require("../models")
 
 class Controller{
 
@@ -12,17 +14,23 @@ class Controller{
     }
 
     static loginForm(req, res){
-        res.render('loginForm')
+        let {error} = req.query
+
+
+        res.render('loginForm', {error})
     }
 
-    static postRegister(req, res){
-        const {username, email, password, role} = req.body
-
-        User.create({username, email, password, role})
-        .then(newUser => {
-            res.redirect('/login')
-        })
-        .catch(err => res.send(err))
+    static async postRegister(req, res){
+        try {
+            const {username, email, password, Role, fullName, bio, avatarUrl } = req.body;
+            const newUser = await User.create({username, email, password, Role});
+            // console.log(newUser);
+            // console.log({id, username, email, password, Role});
+            await Profile.create({fullName, bio, avatarUrl, UserId: newUser.id});
+            res.redirect('/login');
+        } catch (err) {
+            res.send(err);
+        }
     }
 
    static postlogin(req, res){
@@ -32,8 +40,21 @@ class Controller{
     .then(user => {
         if (user) {
             const isValidPassword = bcrypt.compareSync(password, user.password)
+
+            if (isValidPassword){
+
+                req.session.UserId = User.id
+                return res.redirect('/')
+            }else {
+                const error = 'invalid username/password'
+                return res.redirect(`/login?error=${error}`)
+            }
+        }else {const error = 'invalid username/password'
+        return res.redirect(`/login?error=${error}`)
+
         }
     })
+    .catch(err => res.send(err))
    }
 }
 
