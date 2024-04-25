@@ -1,0 +1,27 @@
+[
+    {
+      "username": "Niaril",
+      "email": "Niarllyanbjhvjs@gmail.com",
+      "password": "JhdK23",
+      "Role": "Admin"
+    },
+    {
+        "username": "Nima",
+        "email": "nimachen9@gmail.com",
+        "password": "poOl90",
+        "Role": "User"
+      },
+      {
+        "username": "Jurix",
+        "email": "juklrik11@gmail.com",
+        "password": "okKhlas99",
+        "Role": "User"
+      },
+      {
+        "username": "Lombu",
+        "email": "liofd12@gmail.com",
+        "password": "opLKH1",
+        "Role": "User"
+      }
+      
+  ]
