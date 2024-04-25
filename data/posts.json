@@ -5,7 +5,7 @@
       "imgUrl": "https://i.pinimg.com/originals/af/ef/96/afef9629d9f2277be4ebd9b15b9fd56d.jpg",
       "createdAt": "2021-05-19",
       "updatedAt": "2021-11-11",
-      "userId": "1"
+      "UserId": 1
     },
     {
         "title": "Nature",
@@ -13,7 +13,7 @@
         "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/image-2-1604091701.jpeg?crop=1xw:1xh;center,top&resize=980:*",
         "createdAt": "2023-10-09",
         "updatedAt": "2023-12-11",
-        "userId": "1"
+        "UserId": 2
       },
       {
         "title": "Selfie",
@@ -21,7 +21,7 @@
         "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/image-2-1604091701.jpeg?crop=1xw:1xh;center,top&resize=980:*",
         "createdAt": "2020-10-19",
         "updatedAt": "2022-01-11",
-        "userId": "1"
+        "UserId": 3
       },
       {
         "title": "Sport",
@@ -29,7 +29,7 @@
         "imgUrl": "hhttps://skydivethefalls.com/wp-content/uploads/2022/01/Tandem-smile.jpg",
         "createdAt": "2023-10-19",
         "updatedAt": "2023-11-11",
-        "userId": "1"
+        "UserId": 4
       }
     
 
