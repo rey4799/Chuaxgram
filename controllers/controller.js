@@ -1,5 +1,5 @@
 const bcrypt =  require('bcryptjs')
-const { op } = require("sequelize");
+const { Op } = require("sequelize");
 const {User,Profile, Post} = require("../models")
 
 class Controller{
@@ -84,7 +84,7 @@ class Controller{
    static async ShowAllUser(req, res){
     try {
         const { username } = req.query;
-        const whereCondition = username ? { username: { [op.iLike]: `%${username}%` } } : {};
+        const whereCondition = username ? { username: { [Op.iLike]: `%${username}%` } } : {};
         const users = await User.findAll({
             where: whereCondition,
             include: { model: Profile }
